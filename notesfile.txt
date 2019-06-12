@@ -1,0 +1,93 @@
+This video defines some of the important Principles that should be kept in mind while designing a software.
+DEFINITION OF A GOOD DESIGN
+->A design is good if the cost for changing the design is minimum.
+
+EVALUATING QUALITY OF A DESIGN
+-> We never get the right design at the first time.
+-> Just like softwares cannot be written once and then left alone, it has to be constantly updated.
+-> reviewing code and design.
+
+CREATING A GOOD DESIGN
+-> Just keep the design simple and avoid complexity, write simple code.
+  ->->Simple means less duplication and easier to understand.
+  ->->Simple code prevents us from distractions and keep us focussed at the problem at hand.
+
+There are generally 2 types of complexity-
+1) Inherent-comes from the problem domain.
+2) Accidental-arises due to the solution that we provide to solve the problem.
+
+Therefore, in order to make a good design we need to hide the inherent complexity and remove the accidental complexity.
+
+TESTING
+If we have automated testing we can make changes even at the last moment. Therefore automated testing is much better than manual testing.
+
+COHESION
+Cohesive code is a code which is narrow , focussed and does one thing at a time.
+It lowers the cost of changing the software.
+
+COUPLING
+Inheritence is the worst from of coupling.
+->Either try to remove coupling or use loose coupling.
+
+***A GOOD DESIGN HAS HIGH COHESION AND LOW COUPLING.
+
+Avoid duplication of code. To check for the duplication of code we have several tools,one of them is CPD-Copy paste detector.
+The DRY Principle reduces the cost of devlopment.
+
+LONG METHODS should not be used because-
+-> hard to test, read
+-> hard to reuse, leads to duplication
+-> lacks cohesion and high coupling
+->-> How do we decide that a method is long?
+**SLAP-SINGLE LEVEL ABSTRACTION PRINCIPLE
+
+Compose Method Pattern
+-> The code should be self documented and easy to understand manner and avoid obsolete comments.
+
+OPEN CLOSED PRINCIPLE
+->It states that software module should be open for extension but closed from modification.
+This can be achieved by Abstraction and Polymorphism
+
+To make an enhancement, we prefer -
+1)To add a new small module of code rather than,
+2)Making changes to the existing code.
+
+A class is not infinitely extensible.
+Extensibility also increases complexity.
+Who should make the code extensible ? ---> Anyone who knows the software as well as the domain.
+
+
+LISKOV'S substitution principle
+It states that inheritence should only be used for substitutability. Overuse of Inheritence should be avoided.
+This is mainly because Inheritence demands more from a devloper than composition or delegation.
+
+---> Services of the derived class should require no more and promise no less than the corresponding services of the base class.
+---> This is because the user of a base class should be able to use an instance of derived class without knowing the difference.
+
+***Violating Liskov's substitution principle may result in violating open closed principle on the user code.
+
+1)In case of JAVA, it can be more generous --eg- a method can be protected in base class but can be public in derived class.
+  This is implemented at language level.
+2)A derived function cannot throw any checked exception not thrown by the base class.
+Therefore, we should use composition or delegation instead of inheritence unless we need substitutability.
+
+Using an ide we can easily convert inheritence to delegation by refactoring the code.
+-> This violates the DRY as well as the Open closed principle.
+
+
+DEPENDENCY INVERSION PRINCIPLE
+->A concrete class like Person should not depend on a concrete class like clock, instead both the classes should depend on Alarm.
+We use this extensively as it lowers coupling.
+ 
+INTERFACE SEGREGATION PRINCIPLE
+->It helps in keeping the interfaces cohesive, narrow and focussed.
+
+An easy way to remember these is SOLID
+SRP-SINGLE RESPONSIBILITY PRINCIPLE
+OCP-OPEN CLOSED PRINCIPLE
+LSP-LISKOV'S SUBSTITUTION PRINCIPLE
+ISP-INTERFACE SEGREGATION PRINCIPLE
+DIP-DEPENDENCY INVERSION PRINCIPLE
+
+  In addition to the above-YAGNI and DRY principle should be taken care of.
+
